@@ -1,0 +1,17 @@
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.index-body{
+  background-color: rgb(54, 82, 100);
+}
+
+.signin-bg{
+  background-color: white;
+}
+.signin-form-border{
+  border-style: solid;
+  border-width: 7px;
+  border-color: rgb(255, 183, 50);
+}
