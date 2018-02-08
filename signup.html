@@ -19,24 +19,23 @@
     <div class = "container-fluid">
       <div class="row align-items-center pt-3 mt-3">
         <div class="col-4 mx-auto form-border form-bg info-form">
-            <form class="pb-4" id="form-signup">
+            <form action=php/signup.php method="POST" class="pb-4" id="form-signup">
               <div class="row">
                 <div class = "container-fluid form-header-bg pt-3 pb-3">
                   <h2 class="form-signup-heading text-center"> Sign Up</h2>
                 </div>
               </div>
-
               <div class="form-group pt-3">
                 <label for="Name">Full Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter Full Name" required>
+                <input type="text" class="form-control" name="name" placeholder="Enter Full Name" required>
               </div>
               <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required>
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
               </div>
               <div class="form-group">
                 <label for="school">School</label>
@@ -50,7 +49,7 @@
               </div>
               <div class="form-group">
                 <label for="major">Major</label>
-                <select class="major form-control" name="major" required>
+                <select class="major form-control" name="major" id="major" required>
                   <!--Eschool-------------------->
                   <option rel="eschool" value="bme">Biomedical Engineering</option>
                   <option rel="eschool" value="csEschool">Computer Science</option>
@@ -59,6 +58,15 @@
                   <option rel="college" value="bio" disabled="True">Biology</option>
                   <option rel="college" value="chem" disabled="True">Chemistry</option>
                   <option rel="college" value="csCollege" disabled="True">Computer Science</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="minor">Minor</label>
+                <select class="minor form-control" name="minor" required>
+                  <!--Eschool-------------------->
+                  <option  value="none">None</option>
+                  <option  value="business">Business</option>
+
                 </select>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>

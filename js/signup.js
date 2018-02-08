@@ -2,6 +2,7 @@
 $(document).ready(function() {
     $('.school').select2();
     $('.major').select2();
+    $('.minor').select2();
 });
 
 
@@ -16,7 +17,7 @@ $(function(){
       //clean the second select (value and option active) to prevent bad link (cat1 with subcat of cat2)
       $subcat.find("option").attr("style","");
       $subcat.val("");
-      //if a option si selected i show the option linked by rel attr
+
       $subcat.find("[rel="+_rel+"]").prop('disabled', false);
       $.each(['eschool', 'college'], function(index, value){
         if(value!=_rel){
