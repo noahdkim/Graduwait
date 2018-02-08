@@ -1,0 +1,32 @@
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.index-body{
+  background-color: rgb(54, 82, 100);
+}
+
+.signin-bg{
+  background-color: rgb(232, 218, 178);
+}
+.signin-form-border{
+  border-style: solid;
+  border-width: 7px;
+  border-color: rgb(255, 183, 50);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20%;
+}
+
+.login-img-bg{
+  background-color: rgb(255,90,95);
+}
+
+.login-form{
+  font-family: 'Open Sans', sans-serif;
+}

@@ -1,17 +1,25 @@
 .vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
   display: flex;
   align-items: center;
 }
+.form-header{
 
-.index-body{
-  background-color: rgb(54, 82, 100);
+}
+.info-form{
+  font-family: 'Open Sans', sans-serif;
 }
 
-.signin-bg{
-  background-color: white;
-}
-.signin-form-border{
+.form-border{
   border-style: solid;
   border-width: 7px;
   border-color: rgb(255, 183, 50);
+}
+.form-bg{
+  background-color: rgb(232, 218, 178);
+}
+.form-header-bg{
+  background-color: rgb(255,90,95);
 }

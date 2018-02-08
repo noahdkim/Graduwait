@@ -11,11 +11,14 @@
   background-color: rgb(54, 82, 100);
 }
 
-.signin-bg{
+.form-bg{
   background-color: white;
 }
-.signin-form-border{
-  border-style: solid;
-  border-width: 7px;
-  border-color: rgb(255, 183, 50);
+
+.signup-form{
+    font-family: 'Open Sans', sans-serif;
 }
+.login-img-bg{
+  background-color: rgb(255,90,95);
+}
+form label {font-weight:bold}
