@@ -6,6 +6,7 @@ Helps University of Virginia students find out if they have satisfied all requir
 - [Bootstrap 4](https://v4-alpha.getbootstrap.com/): An HTML, CSS, JS Framework
 - [jQuery](https://jquery.com/): Cross-platform JavaScript library
 - [select2](https://select2.org/): Customizable select boxes
+- [PHPMailer](https://github.com/PHPMailer/PHPMailer): Email sending library for PHP
 
 ## Authors
 
