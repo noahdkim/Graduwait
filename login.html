@@ -15,12 +15,12 @@
               <img src="imgs/gw8_logo.png" class="img-fluid center">
             </div>
           </div>
-            <form class="pb-4 pt-4 login-form" id="form-signin">
+            <form action="php/login.php" method="POST" class="pb-4 pt-4 login-form" id="form-signin">
               <div class="form-group">
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
               <div class="form-group">
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" name="password" placeholder="Password">
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
               <br>

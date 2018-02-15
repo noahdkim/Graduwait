@@ -1,0 +1,23 @@
+.nav-tabs .nav-link.active {
+  background-color:rgb(54, 82, 100);
+  border-bottom:#e2e2e2;
+  color: white;
+  font-weight: bold;
+}
+a{
+  color: white;
+}
+a:active{
+  color:white;
+}
+.nav-tabs{
+  background-color: rgb(255,90,95);
+}
+
+.index-body{
+  background-color: rgb(54, 82, 100);
+}
+
+.head-img{
+  background-color: rgb(255,90,95);
+}
