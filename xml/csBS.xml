@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seas>
+  <req>APMA 1110</req>
+  <req>APMA 2120</req>
+  <req>CHEM 1610</req>
+  <req>CHEM 1611</req>
+  <req>ENGR 1620</req>
+  <req>ENGR 1621</req>
+  <req>PHYS 1425</req>
+  <req>PHYS 1429</req>
+  <req>PHYS 2415</req>
+  <req>PHYS 2419</req>
+</seas>
