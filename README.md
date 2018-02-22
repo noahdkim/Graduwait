@@ -10,7 +10,7 @@ Helps University of Virginia students find out if they have satisfied all requir
 
 ## Authors
 
-* **Noah Kim**  - [Github](https://github.com/nk8na) [Website](noahdkim.com) 
+* **Noah Kim**  - [Github](https://github.com/noahdkim) [Website](noahdkim.com) 
 * **Kenny Le**  - [Github](https://github.com/khl3ej)
 
 
