@@ -26,7 +26,7 @@
         <li id="seas-req-button2"><button style="visibility: hidden" onclick="removeItem(this.id)" type="button" id="APMA 1110-" class="btn seas">APMA 1110</button></li>
         <li id="seas-req-button2"><button style="visibility: hidden" onclick="removeItem(this.id)" type="button" id="APMA 2120-" class="btn seas">APMA 2120</button></li>
         <li id="seas-req-button2"><button style="visibility: hidden" onclick="removeItem(this.id)" type="button" id="CHEM 1610-" class="btn seas">CHEM 1610</button></li>
-        <li id="seas-req-button2"><button style="visibility: hidden" onclick="emoveItem(this.id)" type="button" id="CHEM 1611-" class="btn seas">CHEM 1611</button></li>
+        <li id="seas-req-button2"><button style="visibility: hidden" onclick="removeItem(this.id)" type="button" id="CHEM 1611-" class="btn seas">CHEM 1611</button></li>
       </ol>
       <h2> CS </h2><br>
       <ol id="sat-cs-reqs2" style="list-style-type: none;">
