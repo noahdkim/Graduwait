@@ -4,7 +4,8 @@
   displayUserInfo();
   $user = "hi";
   function displayUserInfo(){
-    echo("Welcome, Hi");
+    $name = $_SESSION['fullName'];
+    echo("Welcome, $name");
   }
 
 ?>

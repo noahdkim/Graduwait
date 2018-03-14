@@ -7,7 +7,7 @@
 
   if (mysqli_num_rows($res) != 0){
     $row = mysqli_fetch_array($res);
-    $_SESSION['fullName'] = $row['fullName'];
+    $_SESSION['fullName'] = "$row['fullName']";
     $_SESSION['email'] = $row['email'];
     $_SESSION['school'] = $row['school'];
     $_SESSION['major'] = $row['major'];
