@@ -18,7 +18,7 @@
           </div>
             <form action="php/checkLogin.php" method="POST" class="pb-4 pt-4 login-form" id="form-signin">
               <div class="form-group">
-                <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" autofocus>
                 </div>
               <div class="form-group">
                 <input type="password" class="form-control" name="password" placeholder="Password">

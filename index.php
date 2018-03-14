@@ -15,7 +15,7 @@
 </head>
 <body class="index-body">
   <div class="container-fluid head-img">
-    <a href="login.html">
+    <a href="index.php">
       <img src="imgs/gw8_logo.png" style="width:50px;height:50px;">
     </a>
   </div>
