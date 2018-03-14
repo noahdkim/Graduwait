@@ -12,6 +12,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.response {
+  color: red;
+}
+
 .form-border{
   border-style: solid;
   border-width: 7px;
