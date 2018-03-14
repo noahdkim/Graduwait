@@ -12,12 +12,14 @@
     $_SESSION['school'] = $row['school'];
     $_SESSION['major'] = $row['major'];
     $_SESSION['minor'] = $row['minor'];
+    $_SESSION['isLogged'] = 1;
     $_SESSION['errorMessage'] = 0;
     header('Location: ../index.php');
   }
   else{
     // if user info is not in db then establish error and return to login.
-    $_SESSION['errorMessage'] = 1;
+    $_SESSION['loginErrorMessage'] = 1;
+    $_SESSION['isLogged'] = 0;
     header('Location: ../login.php');
     exit();
   }

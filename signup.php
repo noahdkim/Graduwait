@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,7 @@
     <div class = "container-fluid">
       <div class="row align-items-center pt-3 mt-3">
         <div class="col-4 mx-auto form-border form-bg info-form">
-            <form action=php/signup.php method="POST" class="pb-4" id="form-signup">
+            <form action=php/checkSignup.php method="POST" class="pb-4" id="form-signup">
               <div class="row">
                 <div class = "container-fluid form-header-bg pt-3 pb-3">
                   <h2 class="form-signup-heading text-center"> Sign Up</h2>
@@ -70,7 +71,13 @@
                 </select>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
-
+              <div class='response' style="color: red;">
+                <?php
+                  if (isset($_SESSION['signupErrorMessage'])){
+                      echo "<strong>We're sorry, that email is already registered!</strong>";
+                  }
+                ?>
+                </div>
             </form>
         </div>
       </div>

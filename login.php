@@ -27,7 +27,7 @@
               <br>
               <div class='response' style="color: red;">
               <?php
-                 if (isset($_SESSION['errorMessage'])){
+                 if (isset($_SESSION['loginErrorMessage'])){
                      echo "<strong>Incorrect Email or Password!</strong>";
                  }
                 ?>
