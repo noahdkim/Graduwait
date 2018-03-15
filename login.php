@@ -33,7 +33,7 @@
                 ?>
               </div>
               <br>
-              <h6><br>New to Graduwait? <a href="signup.html"> Sign up now</a></h6>
+              <h6><br>New to Graduwait? <a href="signup.php"> Sign up now</a></h6>
             </form>
         </div>
       </div>
