@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php
+  session_start(); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +31,9 @@
               <?php
                  if (isset($_SESSION['loginErrorMessage'])){
                      echo "<strong>Incorrect Email or Password!</strong>";
+                 }
+                 else{
+
                  }
                 ?>
               </div>

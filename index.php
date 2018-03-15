@@ -1,4 +1,10 @@
-<?php   session_start(); ?>
+<?php
+  session_start();
+  if (!$_SESSION['isLogged']){
+      header("Location: login.php");
+      exit();
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +36,11 @@
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a>
     </li>
+    <?php if (!$_SESSION['isLogged']): ?>
+      <a class="nav-link" data-toggle="tab" href="login.php" role="tab">Login</a>
+    <?php else: ?>
+      <a class="nav-link" href="logout.php" role="tab">Logout</a>
+    <?php endif; ?>
   </ul>
 
   <div class="tab-content">

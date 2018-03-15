@@ -1,3 +1,8 @@
+<?php
+  if ($_SESSION['isLogged'] != 1){
+      header("Location: login.php");
+  }
+?>
 <div class="container">
   <div class="row">
     <div class="col-10">
