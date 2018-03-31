@@ -1,5 +1,11 @@
 <?php
-  session_start(); 
+  session_start();
+  if(isset($_SESSION['isLogged'])){
+    if ($_SESSION['isLogged']){
+        header("Location: index.php");
+        exit();
+      }
+  }
 ?>
 <!DOCTYPE html>
 <html>

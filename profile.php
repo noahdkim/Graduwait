@@ -3,10 +3,7 @@
       header("Location: login.php");
       exit();
   }
-  displayUserInfo();
-  $user = "hi";
-  function displayUserInfo(){
-    $name = $_SESSION['fullName'];
-    echo("Welcome, $name");
+  else{
+    include("displayProfile.php");
   }
 ?>
