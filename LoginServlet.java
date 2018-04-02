@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LoginServletForAssignmentFive
+ * Servlet implementation class LoginServlet
  */
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
     /**
      * Default constructor. 
      */
-    public LoginServletForAssignmentFive() {
+    public LoginServlet() {
         // TODO Auto-generated constructor stub
     }
 
