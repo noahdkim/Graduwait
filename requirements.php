@@ -57,7 +57,6 @@ angular.module("CounterApp", [])
   var toTake = <?php echo json_encode($_SESSION['toTake'])?>;
   var major ='<?php echo $_SESSION['major'];?>';
   req = JSON.parse(req);
-  console.log(req.seas[0]);
   toTake = JSON.parse(toTake)
 
   // dynamically create buttons if csBS is set
@@ -69,7 +68,6 @@ angular.module("CounterApp", [])
     for(var i = 0; i < req.CS.length; i++){
       makeButton('CS', i, 'req', 1);
       makeButton('CS', i, 'sat', 0);
-      console.log(i);
       // var csButton = document.createElement('input');
       // csButton.type = 'button';
       // csButton.value = courses.CS[i];

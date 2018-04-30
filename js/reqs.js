@@ -9,6 +9,14 @@ function addItem(clickedButton){
     id.style.visibility = "hidden";
     target.style.visibility = "visible";
   }
+  $.ajax({
+    type: "POST",
+    url: 'php/modifySession.php',
+    data: {action:'modifySession'},
+    success: function (obj, textstatus) {
+            console.log("hello");
+          }
+    });
 }
 
 function removeItem(clickedButton){
