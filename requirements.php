@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="col-2">
-      <h5>Satisfied Requirements</h5>
+      <h1>Satisfied</h1>
       <h2> SEAS </h2>
       <ol id="sat-seas-reqs2" style="list-style-type: none;">
         <li id="seas-req-button2"><button ng-click="decrement()" style="visibility: hidden" onclick="removeItem(this.id)" type="button" id="APMA 1110-" class="btn seas">APMA 1110</button></li>
@@ -79,8 +79,10 @@ angular.module("CounterApp", [])
       addItem(this.id);
     }
     seasButton.setAttribute('ng-click', "counter = counter + 1");
+    seasButton.setAttribute('style', 'background-color: #C492B1; margin-bottom: 10px; font-weight: 400; text-align: center; border: 1px solid transparent; padding: .375rem .75rem; border-radius: .25rem; margin-right: 5px;');
     seasTarget.appendChild(seasButton);
   }
+
   for(var i = 0; i < courses.CS.length; i++){
     var csButton = document.createElement('input');
     csButton.type = 'button';
@@ -90,6 +92,7 @@ angular.module("CounterApp", [])
       addItem(this.id);
     }
     csButton.setAttribute('ng-click', "counter = counter + 1");
+    csButton.setAttribute('style', 'background-color: #BCE7FD; margin-bottom: 10px; font-weight: 400; text-align: center; border: 1px solid transparent; padding: .375rem .75rem; border-radius: .25rem; margin-right: 5px;');
     csTarget.appendChild(csButton);
   }
 </script>
