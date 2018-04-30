@@ -53,23 +53,20 @@ angular.module("CounterApp", [])
 </script>
 <script>
   // get JSON from PHP and parse into String, store major var for checking
-  var courses = <?php echo json_encode($_SESSION['courses'])?>;
+  var req = <?php echo json_encode($_SESSION['req'])?>;
+  var toTake = <?php echo json_encode($_SESSION['toTake'])?>;
   var major ='<?php echo $_SESSION['major'];?>';
-  courses = JSON.parse(courses);
-
-  // CSS selectors for container elements
-  var seasTarget = document.getElementById('seas-reqs-list');
-  var seasSatTarget = document.getElementById('sat-seas-reqs2')
-  var csTarget = document.getElementById('cs-reqs-list');
-  var csSatTarget = document.getElementById('sat-cs-reqs2')
+  req = JSON.parse(req);
+  console.log(req.seas[0]);
+  toTake = JSON.parse(toTake)
 
   // dynamically create buttons if csBS is set
   if(major == "csBS"){
-    for(var j = 0; j < courses.seas.length; j++){
+    for(var j = 0; j < req.seas.length; j++){
       makeButton('seas', j, 'req', 1);
       makeButton('seas', j, 'sat', 0);
     }
-    for(var i = 0; i < courses.CS.length; i++){
+    for(var i = 0; i < req.CS.length; i++){
       makeButton('CS', i, 'req', 1);
       makeButton('CS', i, 'sat', 0);
       console.log(i);

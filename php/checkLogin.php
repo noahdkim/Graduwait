@@ -7,6 +7,9 @@
 
   if (mysqli_num_rows($res) != 0){
     $row = mysqli_fetch_array($res);
+    $query2 = "SELECT * FROM majors WHERE major='".$row['major'];
+    $res2 = mysqli_query($conn, $query);
+    $row2 = mysqli_fetch_array($res2);
     $_SESSION['fullName'] = $row['fullName'];
     $_SESSION['email'] = $row['email'];
     $_SESSION['school'] = $row['school'];
@@ -14,7 +17,9 @@
     $_SESSION['minor'] = $row['minor'];
     $_SESSION['isLogged'] = 1;
     $_SESSION['loginErrorMessage'] = 0;
-    $_SESSION['courses'] = $row['courses']
+    $_SESSION['toTake'] = $row['courses'];
+    $_SESSION['req'] = $row2['courses'];
+
     header('Location: ../index.php');
   }
   else{
