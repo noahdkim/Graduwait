@@ -44,7 +44,7 @@
     $_SESSION['loginErrorMessage'] = 0;
     $_SESSION['courses'] = ($row["courses"]);
 
-    $sql = "INSERT INTO users(fullName,email,password,school,major,minor, courses)
+    $sql = "INSERT INTO users(fullName,email,password,school,major,minor,courses)
             VALUES('$name','$email','$password', '$school', '$major', '$minor', '$courses')";
             if ($conn->query($sql) === TRUE) {
               session_start();
@@ -69,10 +69,6 @@
                   }
 
                   header('location: ../index.php');
-
-
-
-
 
               }
               else {

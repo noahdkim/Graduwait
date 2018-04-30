@@ -11,17 +11,6 @@
   $conn = new mysqli("localhost", $dbusername, $dbpassword, $dbname);
   $res = mysqli_query($conn, "SELECT * FROM users WHERE email='ifjaoew@gmail.com'");
   $courses = mysqli_fetch_array($res, MYSQLI_NUM);
-  function debug_to_console( $data ) {
-    $output = $data[6];
-    if ( is_array( $output ) ){
-      //  $output = implode( ',', $output);
-        echo("is array");
-      }
-
-    echo "<script>console.log( $output);</script>";
-  }
-  //debug_to_console($_SESSION['courses']);
-  debug_to_console($courses);
 ?>
 <!DOCTYPE html>
 <html>
