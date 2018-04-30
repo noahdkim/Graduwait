@@ -66,12 +66,12 @@ angular.module("CounterApp", [])
   // dynamically create buttons if csBS is set
   if(major == "csBS"){
     for(var j = 0; j < courses.seas.length; j++){
-      makeButton('seas', j, 'req');
-      makeButton('seas', j, 'sat');
+      makeButton('seas', j, 'req', 1);
+      makeButton('seas', j, 'sat', 0);
     }
     for(var i = 0; i < courses.CS.length; i++){
-      makeButton('CS', i, 'req');
-      makeButton('CS', i, 'sat');
+      makeButton('CS', i, 'req', 1);
+      makeButton('CS', i, 'sat', 0);
       console.log(i);
       // var csButton = document.createElement('input');
       // csButton.type = 'button';
