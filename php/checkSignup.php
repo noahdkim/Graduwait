@@ -24,8 +24,24 @@
       exit();
   }
   else{
-    $sql = "INSERT INTO users(fullName,email,password,school,major,minor)
-            VALUES('$name','$email','$password', '$school', '$major', '$minor')";
+    // Retrieve courses
+    $res = mysqli_query($conn, "SELECT * FROM majors WHERE major='csBS'");
+    $courses = mysqli_fetch_array($res, MYSQLI_NUM);
+
+    // Set Session variables for user
+    $_SESSION['signupErrorMessage'] = 0;
+    $_SESSION['isLogged'] = true;
+    $_SESSION['email'] = $email;
+    $_SESSION['fullName'] = $name;
+    $_SESSION['school'] = $school;
+    $_SESSION['major'] = $major;
+    $_SESSION['minor'] = $minor;
+    $_SESSION['isLogged'] = 1;
+    $_SESSION['loginErrorMessage'] = 0;
+    $_SESSION['courses'] = $courses;
+
+    $sql = "INSERT INTO users(fullName,email,password,school,major,minor, courses)
+            VALUES('$name','$email','$password', '$school', '$major', '$minor', '$courses')";
             if ($conn->query($sql) === TRUE) {
               session_start();
               try {
@@ -47,22 +63,13 @@
                       echo 'Message could not be sent.';
                       // echo 'Mailer Error: ' . $mail->ErrorInfo;
                   }
+
                   header('location: ../index.php');
 
-                  // Retrieve courses
-                  $courses = SELECT * FROM `majors` WHERE `major` LIKE '$major';
 
-                  // Set Session variables for user
-                  $_SESSION['signupErrorMessage'] = 0;
-                  $_SESSION['isLogged'] = true;
-                  $_SESSION['email'] = $email;
-                  $_SESSION['fullName'] = $name
-                  $_SESSION['school'] = $school
-                  $_SESSION['major'] = $major
-                  $_SESSION['minor'] = $minor;
-                  $_SESSION['isLogged'] = 1;
-                  $_SESSION['loginErrorMessage'] = 0;
-                  $_SESSION['courses'] = $courses
+
+
+
               }
               else {
                   // echo "Error: " . $sql . "<br>" . $conn->error;
