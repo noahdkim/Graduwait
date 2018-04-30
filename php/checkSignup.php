@@ -42,7 +42,8 @@
     $_SESSION['minor'] = $minor;
     $_SESSION['isLogged'] = 1;
     $_SESSION['loginErrorMessage'] = 0;
-    $_SESSION['courses'] = ($row["courses"]);
+    $_SESSION['toTake'] = $courses;
+    $_SESSION['req'] = $courses;
 
     $sql = "INSERT INTO users(fullName,email,password,school,major,minor,courses)
             VALUES('$name','$email','$password', '$school', '$major', '$minor', '$courses')";
