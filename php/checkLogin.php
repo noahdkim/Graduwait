@@ -13,7 +13,8 @@
     $_SESSION['major'] = $row['major'];
     $_SESSION['minor'] = $row['minor'];
     $_SESSION['isLogged'] = 1;
-    $_SESSION['errorMessage'] = 0;
+    $_SESSION['loginErrorMessage'] = 0;
+    $_SESSION['courses'] = $row['courses']
     header('Location: ../index.php');
   }
   else{
