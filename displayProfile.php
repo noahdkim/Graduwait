@@ -1,6 +1,6 @@
 
 <div class = "container-fluid pt-4 mt-4">
-  <div class="row align-items-center pt-5 mt-5">
+  <div class="row align-items-center pt-5 mt-5" style='margin-bottom: 150px;' >
     <div class="col-4 mx-auto form-border form-bg">
         <form action="java servlet to post thing" method="POST" class="pb-4 pt-4 login-form" id="form-signin">
           <div class="form-group">
@@ -37,10 +37,9 @@
           <button type="submit" class="btn btn-primary">Edit</button>
           <br>
           <div class='response' style="color: red;">
-
           </div>
-          <br>
-          <h6><br><a href="">Change password</a></h6>
+          <!-- <br> -->
+          <!-- <h6><br><a href="">Change password</a></h6> -->
         </form>
     </div>
   </div>

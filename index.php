@@ -30,7 +30,7 @@
 <body class="index-body">
   <div class="container-fluid head-img">
     <a href="index.php">
-      <img src="imgs/gw8_logo.png" style="width:50px;height:50px;">
+      <img src="imgs/gw8_logo.png" style="width:100px;height:100px;">
     </a>
   </div>
   <ul class="nav nav-tabs justify-content-end" role="tablist" >
