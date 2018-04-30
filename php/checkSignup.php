@@ -26,8 +26,12 @@
   else{
     // Retrieve courses
     $res = mysqli_query($conn, "SELECT * FROM majors WHERE major='csBS'");
-    $courses = mysqli_fetch_array($res, MYSQLI_NUM);
-
+    if (mysqli_num_rows($res)==0) {
+      $_SESSION['signupErrorMessage'] = 1;
+      header('Location: ../signup.php');
+     }
+    $row = mysqli_fetch_assoc($res);
+    $courses=$row["courses"];
     // Set Session variables for user
     $_SESSION['signupErrorMessage'] = 0;
     $_SESSION['isLogged'] = true;
@@ -38,7 +42,7 @@
     $_SESSION['minor'] = $minor;
     $_SESSION['isLogged'] = 1;
     $_SESSION['loginErrorMessage'] = 0;
-    $_SESSION['courses'] = $courses;
+    $_SESSION['courses'] = ($row["courses"]);
 
     $sql = "INSERT INTO users(fullName,email,password,school,major,minor, courses)
             VALUES('$name','$email','$password', '$school', '$major', '$minor', '$courses')";
