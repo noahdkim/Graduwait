@@ -1,8 +1,7 @@
 <?php
-
-  $aResult = array();
-  function modifySession(){
     session_start();
-    $_SESSION['toTake'] = "hello";
-  }
+    $toTake = ($_SESSION['toTake']);
+    $toTake = json_decode($toTake, true);
+    echo $toTake['seas'][1];
+
 ?>

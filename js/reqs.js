@@ -1,22 +1,25 @@
 function addItem(clickedButton){
-  var id = document.getElementById(clickedButton);
+  var button = document.getElementById(clickedButton);
   var target = document.getElementById(clickedButton + "-");
-  console.log(id);
-  if(id.style.visibility === "hidden"){
-    id.style.visibility = "visible";
+  var courseID = button.value; // course id
+  var category = clickedButton.replace(/[0-9]/g, ''); // category
+  if(button.style.visibility === "hidden"){
+    button.style.visibility = "visible";
   }
   else{
-    id.style.visibility = "hidden";
+    button.style.visibility = "hidden";
     target.style.visibility = "visible";
   }
+  id_numbers = new Array();
   $.ajax({
-    type: "POST",
-    url: 'php/modifySession.php',
-    data: {action:'modifySession'},
-    success: function (obj, textstatus) {
-            console.log("hello");
-          }
-    });
+      url:"php/modifySession.php",
+      type:"POST",
+      data: {courseID: courseID, category: category},
+      method:'POST',
+      success:function(msg){
+          console.log(msg);
+      }
+  });
 }
 
 function removeItem(clickedButton){
@@ -39,7 +42,6 @@ function makeButton(category, id, status){
   button.style = 'color: black';
   var reqName = 'req.' + category;
   var toTakeName = 'toTake.' + category;
-  console.log(req.seas[0]);
   button.value = eval(reqName)[id];
   category = category.toLowerCase();
 
