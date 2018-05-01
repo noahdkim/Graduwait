@@ -57,13 +57,16 @@ angular.module("CounterApp", [])
   var toTake = <?php echo json_encode($_SESSION['toTake'])?>;
   var major ='<?php echo $_SESSION['major'];?>';
   req = JSON.parse(req);
+  //req.SEAS=$.map(req.SEAS, function(el) {return el});
+  console.log(req);
   toTake = JSON.parse(toTake)
+  toTake.SEAS=$.map(toTake.SEAS, function(el) {return el});
 
   // dynamically create buttons if csBS is set
   if(major == "csBS"){
-    for(var j = 0; j < req.seas.length; j++){
-      makeButton('seas', j, 'req', 1);
-      makeButton('seas', j, 'sat', 0);
+    for(var j = 0; j < req.SEAS.length; j++){
+      makeButton('SEAS', j, 'req', 1);
+      makeButton('SEAS', j, 'sat', 0);
     }
     for(var i = 0; i < req.CS.length; i++){
       makeButton('CS', i, 'req', 1);

@@ -14,7 +14,7 @@ function addItem(clickedButton){
   $.ajax({
       url:"php/modifySession.php",
       type:"POST",
-      data: {courseID: courseID, category: category},
+      data: {courseID: courseID, category: category.toUpperCase()},
       method:'POST',
       success:function(msg){
           console.log(msg);
@@ -40,7 +40,7 @@ function makeButton(category, id, status){
   var button = document.createElement('input');
   button.type = 'button';
   button.style = 'color: black';
-  var reqName = 'req.' + category;
+  var reqName = 'req.' + category; // req.CS req.SEAS
   var toTakeName = 'toTake.' + category;
   button.value = eval(reqName)[id];
   category = category.toLowerCase();
@@ -52,7 +52,7 @@ function makeButton(category, id, status){
     button.id = category + id + '-';
     var target = document.getElementById(category+'-sat-list');
     button.setAttribute('ng-click', "decrement()");
-    button.setAttribute('style', 'visibility: hidden');
+  //  button.setAttribute('style', 'visibility: hidden');
     button.setAttribute('class', 'btn ' + category)
   }
   else{
@@ -64,10 +64,13 @@ function makeButton(category, id, status){
     button.setAttribute('ng-click', "counter = counter + 1");
     button.setAttribute('style', 'background-color: #C492B1; margin-bottom: 10px; font-weight: 400; text-align: center; border: 1px solid transparent; padding: .375rem .75rem; border-radius: .25rem; margin-right: 5px;');
   }
-  if(eval(toTakeName).indexOf(eval(reqName)[id])>=0 && status=='sat'){
+  var value = eval(toTakeName);
+  value=$.map(value, function(el) {return el});
+  // console.log(value);
+  if(value.indexOf(eval(reqName)[id])>=0 && status=='sat'){
       button.setAttribute('style', 'visibility: hidden');
   }
-  else if(eval(toTakeName).indexOf(eval(reqName)[id])<0 && status=='req'){
+  else if(value.indexOf(eval(reqName)[id])<0 && status=='req'){
     button.setAttribute('style', 'visibility: hidden');
   }
   // if(eval(toTakeName).indexOf(eval(reqName)[id]==-1)){

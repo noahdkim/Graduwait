@@ -7,8 +7,8 @@
 
   if (mysqli_num_rows($res) != 0){
     $row = mysqli_fetch_array($res);
-    $query2 = "SELECT * FROM majors WHERE major='".$row['major'];
-    $res2 = mysqli_query($conn, $query);
+    $query2 = "SELECT * FROM majors WHERE major='csBS'";
+    $res2 = mysqli_query($conn, $query2);
     $row2 = mysqli_fetch_array($res2);
     $_SESSION['fullName'] = $row['fullName'];
     $_SESSION['email'] = $row['email'];
@@ -19,6 +19,7 @@
     $_SESSION['loginErrorMessage'] = 0;
     $_SESSION['toTake'] = $row['courses'];
     $_SESSION['req'] = $row2['courses'];
+    print_r($_SESSION['req']);
 
     header('Location: ../index.php');
   }
