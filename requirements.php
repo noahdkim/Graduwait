@@ -14,19 +14,10 @@
         <h1 style='font-weight: bold; color: white; margin-top: 10px;'>Requirements</h1>
         <h2 style='color: rgb(255,90,95);'> SEAS</h2>
         <ol id="seas-reqs-list" style="list-style-type: none;">
-          <!-- <li id="seas-req-button"><button ng-click="counter = counter + 1" onclick="addItem(this.id)" type="button" id="APMA 1110" class="btn seas">APMA 1110</button></li>
-          <li id="seas-req-button"><button ng-click="counter = counter + 1" onclick="addItem(this.id)" type="button" id="APMA 2120" class="btn seas">APMA 2120</button></li>
-          <li id="seas-req-button"><button ng-click="counter = counter + 1" onclick="addItem(this.id)" type="button" id="CHEM 1610" class="btn seas">CHEM 1610</button></li>
-          <li id="seas-req-button"><button ng-click="counter = counter + 1" onclick="addItem(this.id)" type="button" id="CHEM 1611" class="btn seas">CHEM 1611</button></li> -->
-        </ol>
         <h2 style='color: rgb(255,90,95);'> CS </h2>
         <ol id="cs-reqs-list" style="list-style-type: none;">
-          <!-- <li id="cs-req-button"><button ng-click="counter = counter + 1" onclick="addItem(this.id)" type="button" id="CS 111X" class="btn cs">CS 111X</button></li>
-          <li id="cs-req-button"><button ng-click="counter = counter + 1" onclick="addItem(this.id)" type="button" id="CS 2102" class="btn cs">CS 2102</button></li>
-          <li id="cs-req-button"><button ng-click="counter = counter + 1" onclick="addItem(this.id)" type="button" id="CS 2110" class="btn cs">CS 2110</button></li>
-          <li id="cs-req-button"><button ng-click="counter = counter + 1" onclick="addItem(this.id)" type="button" id="CS 2150" class="btn cs">CS 2150</button></li> -->
         </ol>
-        <h2 style='color: white; font-weight: bold;'>Courses Taken: {{counter}}</h2>
+        <h2 value='load' style='color: white; font-weight: bold;'>Courses Taken: {{counter}}</h2>
       </div>
     </div>
     <div class="col-2">
@@ -41,15 +32,21 @@
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
 <script src="js/reqs.js"></script>
 <script>
-angular.module("CounterApp", [])
-  .controller("CounterController", function($scope){
-    $scope.counter = 0;
+angular.module("CounterApp", ['ngStorage'])
+  .controller("CounterController", function($scope, $localStorage, $window){
+    $scope.counter = localStorage.getItem('counter') || 0;
+    $scope.increment = function(){
+      $scope.counter++;
+      localStorage.setItem('counter', $scope.counter);
+    }
     $scope.decrement = function() {
       $scope.counter--;
+      localStorage.setItem('counter', $scope.counter);
     };
-  })
+  });
 </script>
 <script>
   // get JSON from PHP and parse into String, store major var for checking
