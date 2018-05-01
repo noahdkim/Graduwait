@@ -64,7 +64,7 @@ function makeButton(category, id, status){
     var target = document.getElementById(category+'-sat-list');
     button.setAttribute('ng-click', "decrement()");
   //  button.setAttribute('style', 'visibility: hidden');
-    button.setAttribute('class', 'btn ' + category)
+    button.setAttribute('class', 'btn ' + category);
   }
   else{
     button.id = category + id
@@ -73,7 +73,8 @@ function makeButton(category, id, status){
     }
     var target = document.getElementById(category+'-reqs-list');
     button.setAttribute('ng-click', "counter = counter + 1");
-    button.setAttribute('style', 'background-color: #C492B1; margin-bottom: 10px; font-weight: 400; text-align: center; border: 1px solid transparent; padding: .375rem .75rem; border-radius: .25rem; margin-right: 5px;');
+    button.setAttribute('style', 'background-color:; margin-bottom: 10px; font-weight: 400; text-align: center; border: 1px solid transparent; padding: .375rem .75rem; border-radius: .25rem; margin-right: 5px;');
+    button.setAttribute('class', 'btn ' + category);
   }
   var value = eval(toTakeName);
   value=$.map(value, function(el) {return el});
