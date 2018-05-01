@@ -1,0 +1,24 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js"></script>
+
+<button onclick="call()">Call Controller's method from outside</button>
+<div  id="container" ng-app="" ng-controller="testController">
+</div>
+
+
+<script>
+function call() {
+    var scope = angular.element(document.getElementById('container')).scope();
+      scope.$apply(function(){
+        scope.msg = scope.msg + ' I am the newly addded message from the outside of the controller.';
+    })
+    alert(scope.returnHello());
+}
+
+function testController($scope) {
+    $scope.msg = "Hello from a controller method.";
+    $scope.returnHello = function() {
+        return $scope.msg ;
+    }
+}
+
+</script>

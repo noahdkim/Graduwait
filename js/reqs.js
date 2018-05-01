@@ -12,7 +12,7 @@ function addItem(clickedButton){
   }
   id_numbers = new Array();
   $.ajax({
-      url:"php/modifySession.php",
+      url:"php/removeCourse.php",
       type:"POST",
       data: {courseID: courseID, category: category.toUpperCase()},
       method:'POST',
@@ -23,16 +23,27 @@ function addItem(clickedButton){
 }
 
 function removeItem(clickedButton){
-  var id = document.getElementById(clickedButton);
+  var button = document.getElementById(clickedButton);
   var original = clickedButton.replace("-","");
   var target = document.getElementById(original);
-  if(id.style.visibility === "hidden"){
-    id.style.visibility = "visible";
+  var courseID = button.value.replace("-",""); // course id
+  var category = clickedButton.replace(/[0-9]/g, '').replace("-", ""); // category
+  if(button.style.visibility === "hidden"){
+    button.style.visibility = "visible";
   }
   else{
-    id.style.visibility = "hidden";
+    button.style.visibility = "hidden";
     target.style.visibility = "visible";
   }
+  $.ajax({
+      url:"php/addCourse.php",
+      type:"POST",
+      data: {courseID: courseID, category: category.toUpperCase()},
+      method:'POST',
+      success:function(msg){
+          console.log(msg);
+      }
+  });
 }
 
 
@@ -67,11 +78,14 @@ function makeButton(category, id, status){
   var value = eval(toTakeName);
   value=$.map(value, function(el) {return el});
   // console.log(value);
+  // Course has not been taken, hide satisfied
   if(value.indexOf(eval(reqName)[id])>=0 && status=='sat'){
       button.setAttribute('style', 'visibility: hidden');
   }
+  // Course has been taken, hide required
   else if(value.indexOf(eval(reqName)[id])<0 && status=='req'){
-    button.setAttribute('style', 'visibility: hidden');
+    button.setAttribute('style', button.getAttribute('style') + '; visibility: hidden');
+    button.setAttribute('ng-init', "counter = counter + 1");
   }
   // if(eval(toTakeName).indexOf(eval(reqName)[id]==-1)){
   //
